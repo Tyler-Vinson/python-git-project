@@ -9,10 +9,11 @@ nickel=0
 dime= 0
 quarter= 0
 dollar = 0
+two_dollar =0
 coin_total=0
 #loop that asks for you coin amount 
 while True :
-    first_coin= input("Enter a coin (P, N, D, Q, Dollar) or 'done': ")
+    first_coin= input("Enter a coin (P, N, D, Q, Dollar, Two Dollar) or 'done': ")
     if first_coin =='P': 
         coin_total += 0.01 
         pennies += 1
@@ -48,10 +49,17 @@ while True :
         print(f"Running Total: {number_of_coins} coins worth ${coin_total:.2f}")
         print()
         continue 
+    if first_coin == 'Two Dollar':
+        coin_total += 2.00
+        two_dollar += 1
+        number_of_coins += 1
+        print(f"Running Total: {number_of_coins} coins worth ${coin_total:.2f}")
+        print()
+        continue 
     elif first_coin == "done":
         break    
     else:
-        print('Invalid coin! Please enter P, N, D, Q, Dollar, or done.')
+        print('Invalid coin! Please enter P, N, D, Q, Dollar, Two Dollar, or done.')
         print()
 #printing final results
 print()
@@ -61,5 +69,6 @@ print(f"Nickels: {nickel}")
 print(f"Dimes: {dime}")
 print(f"Quarters: {quarter}")
 print(f"Dollars: {dollar}")
+print(f"Two Dollar Bill: {two_dollar}")
 print (f"Total Coins: {number_of_coins}")
 print (f"Total Value: ${coin_total:.2f}")
